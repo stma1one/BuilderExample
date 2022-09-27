@@ -15,7 +15,7 @@ namespace DependencyInjectionExample.Models
         {
             AttackPoints = 5;
         }
-       public void Hit(Warrior target)
+       public void Hit(Samurai target)
        {
                 Console.WriteLine($"Chopped {target.Name} clean in half. ENEMY LOST {AttackPoints} POINTS");
                 target.Vitallity -= AttackPoints;
