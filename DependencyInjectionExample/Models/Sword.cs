@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DependencyInjectionExample.Models.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,7 +8,8 @@ using System.Threading.Tasks;
 namespace DependencyInjectionExample.Models
 {
     //taken from ninject
-      public class Sword
+    //חרב מממשת את היכולות של כלי נשק
+      public class Sword:IWeapon
         {
         public int AttackPoints { get;  }
 
@@ -15,10 +17,10 @@ namespace DependencyInjectionExample.Models
         {
             AttackPoints = 5;
         }
-       public void Hit(Samurai target)
+       public  void Hit(Warrior w)
        {
-                Console.WriteLine($"Chopped {target.Name} clean in half. ENEMY LOST {AttackPoints} POINTS");
-                target.Vitallity -= AttackPoints;
+                Console.WriteLine($"Chopped {w.Name} clean in half. ENEMY LOST {AttackPoints} POINTS");
+                w.Vitallity -= AttackPoints;
        }
       
     }

@@ -8,5 +8,6 @@ namespace DependencyInjectionExample.Models
 {
     public class Ninja:Warrior
     {
+
     }
 }

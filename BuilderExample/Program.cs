@@ -8,8 +8,9 @@ internal class Program
        //regular usage ---ughhhhhh ugly
        BlogPost blogPost = new BlogPost("My First Blog Post", "This is my first blog post", "Kuku Kaka", DateTime.Now, new List<string>(), new List<string>(),"C#","Programing");
         Console.WriteLine("First Blog:" + blogPost);
-    
-        
+
+        BlogPost p = new BlogPost() { Author = "" };
+       
         
         #region using builder
         BlogPostBuilder builder = new BlogPostBuilder();
@@ -25,7 +26,7 @@ internal class Program
         #endregion
 
         #region Using Fluent Builder
-        BlogPost blogPost1 = new FluentBlogPostBuilder().WithAuthor("My First Blog Post")
+        BlogPost blogPost1 = new FluentBlogPostBuilder().WithTitle("My First Blog Post")
             .WithContent("This is my first blog post")
             .WithAuthor("Kuku Kaka").WithDate(DateTime.Now).WithCategory("C#").Build();
         Console.WriteLine("Third blog:" + blogPost1);

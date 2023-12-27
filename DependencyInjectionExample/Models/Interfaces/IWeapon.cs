@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace DependencyInjectionExample.Models.Interfaces
 {
-    public class IWeapon
+    //מכיון שנשק הוא מושג אבסטרקטי - נגדיר לו ממשק המציין מה היכולות של נשק...
+    public interface IWeapon
     {
+        public int AttackPoints { get; }
+        public void Hit(Warrior w);
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DependencyInjectionExample.Models.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace DependencyInjectionExample.Models
 {
+    //סמוראי סוג של לוחם
     public class Samurai : Warrior
     {
         #region ?
@@ -14,7 +16,7 @@ namespace DependencyInjectionExample.Models
         #region answer
         //public IWeapon weapon {get;}
         #endregion
-        public Sword Sword { get; }
+        public IWeapon Weapon { get; }
 
 
         #region DI
@@ -25,10 +27,10 @@ namespace DependencyInjectionExample.Models
          * }
         */
         #endregion
-        public Samurai()
+        public Samurai(IWeapon weapon)
         {
-            Sword = new Sword();
-            Vitallity = 20;
+            this.Weapon = weapon;
+           
            
         }
 
@@ -53,7 +55,7 @@ namespace DependencyInjectionExample.Models
             //but what if we want to attack with a different weapon?
             #endregion
                                 
-            Sword.Hit(w);
+            Weapon.Hit(w);
         }
 
     }

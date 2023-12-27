@@ -1,5 +1,6 @@
 ﻿namespace DependencyInjectionExample.Models
 {
+    //מחלקת בסיס של לוחם
     public class Warrior
     {
         private bool isAlive;
@@ -8,7 +9,7 @@
 
         public Warrior()
         {
-            Vitallity = 20;
+           
             IsAlive = true; 
         }
 

@@ -63,6 +63,8 @@ namespace BuilderExample.Builders
 
         public void AddTitle(string title)
         {
+            if (string.IsNullOrEmpty(title))
+                throw new NullReferenceException("Title cannot be empty");
             blogPost.Title = title;
         }
         #endregion
