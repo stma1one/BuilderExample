@@ -29,7 +29,9 @@ namespace BuilderExample.Builders
         #region שלב 4: נממש את פעולות הממשק. כל פעולה תעדכן את תכונות האובייקט שלנו
         public void AddAuthor(string author)
         {
-            blogPost.Author = author;
+            if (string.IsNullOrEmpty(author))
+                throw new NullReferenceException("Author cannot be empty");
+			blogPost.Author = author;
         }
 
         public void AddCategory(string category)
