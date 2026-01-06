@@ -12,13 +12,13 @@ namespace BuilderExample.Models
         public string Content { get; set; }
         public string Author { get; set; }
         public DateTime Date { get; set; }
-        public IList<string> Categories { get; set; }
-        public IList<string> Tags { get; set; }
+        public List<string> Categories { get; set; }
+        public List<string> Tags { get; set; }
         public string MetaDescription { get; set; }
         public string MetadataTitle { get; set; }
 
         ///this is UGLY
-        public BlogPost(string title, string content, string author, DateTime date, IList<string> categories, IList<string> tags, string metaDescription, string metadataTitle)
+        public BlogPost(string title, string content, string author, DateTime date, List<string> categories, List<string> tags, string metaDescription, string metadataTitle)
         {
             Title = title;
             Content = content;

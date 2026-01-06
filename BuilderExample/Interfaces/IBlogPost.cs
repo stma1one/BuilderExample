@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using BuilderExample.Models;
 
-namespace BuilderExample.Builders
+namespace BuilderExample.Interfaces
 {
     public interface IBlogPost
     {

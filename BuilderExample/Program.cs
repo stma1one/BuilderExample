@@ -5,26 +5,21 @@ internal class Program
 {
     private static void Main(string[] args)
     {
-       //regular usage ---ughhhhhh ugly
-       BlogPost blogPost = new BlogPost(title:"My First Blog Post",content: "This is my first blog post", "Kuku Kaka", DateTime.Now, new List<string>(), new List<string>(),"C#","Programing");
-        Console.WriteLine("First Blog:" + blogPost);
+        //regular usage ---ughhhhhh ugly
+        // BlogPost blogPost = new BlogPost(title:"This is my first blog post", content: "My First Blog Post", "Kuku Kaka", DateTime.Now, new List<string>(), new List<string>(),"C#","Programing");
+        // Console.WriteLine("First Blog:" + blogPost);
 
-        BlogPost p = new BlogPost() { Author = "" };
-       
         BlogPostBuilder builder = new BlogPostBuilder();
         builder.AddTitle("My First Blog Post");
         builder.AddContent("This is my first blog post");
-        builder.AddAuthor("Kuku Kaka");
         builder.AddDate(DateTime.Now);
-
-		BlogPost p1= builder.Build();
-      
+        BlogPost blogPost = builder.Build();
 
 
 		#region using builder
-		BlogPostBuilder builder = new BlogPostBuilder();
-        builder.AddTitle("My First Blog Post");
-        builder.AddContent("This is my first blog post");
+		BlogPostBuilder builder2 = new BlogPostBuilder();
+        builder2.AddTitle("My First Blog Post");
+        builder2.AddContent("This is my first blog post");
         builder.AddAuthor("Kuku Kaka");
         builder.AddDate(DateTime.Now);
         builder.AddCategory("C#");
@@ -41,11 +36,14 @@ internal class Program
         Console.WriteLine("Third blog:" + blogPost1);
 
         #endregion
+        FluentBlogPostBuilder fl = new FluentBlogPostBuilder();
+        fl.WithTitle("My First Blog Post");
+        fl.WithContent("This is my first blog post");
+        BlogPost p = fl.Build();
 
 
 
 
 
-
-    }
+	}
 }
